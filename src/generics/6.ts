@@ -1,7 +1,16 @@
-const age: number = 50;
-const username: string = "Max";
-const toggle: boolean = true;
-const empty: null = null;
-const callback: (a: number) => number = (a) => {
-  return 100 + a;
+type Errors = {
+  email?: string[];
+  firstName?: string[];
+  lastName?: string[];
+  phone?: string[];
 };
+
+type Form = {
+  email: string | null;
+  firstName: string | null;
+  lastName: string | null;
+  phone: string | null;
+  errors: Errors;
+};
+
+type Params = Omit<Form, "errors">;
